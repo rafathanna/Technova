@@ -1,0 +1,173 @@
+/* Futuristic Global Tech Design System */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap");
+
+:root {
+  /* Ultra-Premium Light Theme (Default/Base) */
+  --bg-deep: #f8fafc;
+  --bg-surface: #ffffff;
+  --primary-accent: #0056d2; /* Professional Blue for Light */
+  --secondary-accent: #6c5ce7; /* Subtle Purple for Light */
+  --text-main: #0f172a;
+  --text-dim: #64748b;
+  --glass: rgba(0, 86, 210, 0.03);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --gradient-tech: linear-gradient(135deg, #0056d2, #6c5ce7);
+  --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+
+  --font-main: "Plus Jakarta Sans", sans-serif;
+  --font-heading: "Outfit", sans-serif;
+}
+
+[data-theme="dark"] {
+  /* Ultra-Premium Dark Theme */
+  --bg-deep: #050505;
+  --bg-surface: #0f1115;
+  --primary-accent: #00f2ff; /* Electric Cyan for Dark */
+  --secondary-accent: #7000ff; /* Neon Purple for Dark */
+  --text-main: #ffffff;
+  --text-dim: #94a3b8;
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --gradient-tech: linear-gradient(135deg, #00f2ff, #7000ff);
+  --card-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: none; /* Custom cursor implementation pending */
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Custom Selection */
+::selection {
+  background: var(--primary-accent);
+  color: #000;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-accent);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Common Header Styles */
+.section-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  background: var(--gradient-tech);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 25px;
+  line-height: 1.1;
+}
+
+/* Glass Buttons */
+.btn {
+  padding: 16px 36px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--gradient-tech);
+  color: #000;
+}
+
+.btn-primary:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 242, 255, 0.25);
+}
+
+.btn-outline {
+  background: var(--glass);
+  color: var(--text-main);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary-accent);
+  color: var(--primary-accent);
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  font-family: "Cairo", sans-serif;
+}
+[dir="rtl"] body {
+  text-align: right;
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
