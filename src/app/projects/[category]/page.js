@@ -55,6 +55,12 @@ const projectsData = {
   ],
 };
 
+export async function generateStaticParams() {
+  return Object.keys(projectsData).map((category) => ({
+    category: category,
+  }));
+}
+
 export default function ProjectDetails({ params }) {
   const resolvedParams = use(params);
   const { category } = resolvedParams;
