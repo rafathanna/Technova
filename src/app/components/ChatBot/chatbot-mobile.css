@@ -1,0 +1,70 @@
+/* Mobile Responsive Styles for ChatBot */
+@media (max-width: 768px) {
+  .chatbot-container {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .chatbot-toggle {
+    width: 55px;
+    height: 55px;
+    font-size: 1.3rem;
+  }
+
+  .chatbot-window {
+    width: calc(100vw - 40px);
+    max-width: 380px;
+    height: 550px;
+    max-height: calc(100vh - 110px);
+  }
+
+  .chatbot-header h3 {
+    font-size: 1rem;
+  }
+
+  .chatbot-messages {
+    padding: 15px;
+  }
+
+  .message {
+    font-size: 0.9rem;
+    max-width: 85%;
+  }
+
+  .chatbot-suggestions {
+    padding: 8px 12px 0;
+    gap: 6px;
+  }
+
+  .suggestion-btn {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+
+  .chatbot-input {
+    padding: 12px;
+  }
+
+  .chatbot-input input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  [dir="rtl"] .chatbot-container {
+    right: auto;
+    left: 20px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .chatbot-window {
+    width: calc(100vw - 30px);
+    height: calc(100vh - 100px);
+    max-height: calc(100vh - 100px);
+  }
+
+  .chatbot-toggle {
+    width: 50px;
+    height: 50px;
+  }
+}

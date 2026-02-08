@@ -1,0 +1,104 @@
+.futuristic-services {
+  padding: 150px 0;
+  background: var(--bg-deep);
+  position: relative;
+}
+
+.services-header {
+  margin-bottom: 80px;
+}
+
+.services-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.services-bento {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.service-tech-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: 28px;
+  padding: 45px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(10px);
+}
+
+.service-tech-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  border-color: var(--primary-accent);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .service-tech-card:hover {
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.service-icon-glow {
+  width: 60px;
+  height: 60px;
+  background: var(--glass);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--primary-accent);
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.service-tech-card:hover .service-icon-glow {
+  background: var(--primary-accent);
+  color: #000;
+  box-shadow: 0 0 30px rgba(0, 242, 255, 0.4);
+}
+
+.service-tech-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 15px;
+}
+
+.service-tech-desc {
+  font-size: 1rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+.card-tech-footer {
+  margin-top: 30px;
+}
+
+.tech-line {
+  width: 40px;
+  height: 2px;
+  background: var(--primary-accent);
+  transition: width 0.4s ease;
+}
+
+.service-tech-card:hover .tech-line {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .services-bento {
+    grid-template-columns: 1fr;
+  }
+  .service-tech-card {
+    padding: 30px;
+  }
+}

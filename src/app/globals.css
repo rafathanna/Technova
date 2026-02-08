@@ -1,0 +1,197 @@
+/* Futuristic Global Tech Design System */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap");
+
+:root {
+  /* Ultra-Premium Light Theme - Masterful Refinement */
+  --bg-deep: #f8fafc;
+  --bg-surface: #ffffff;
+  --primary-accent: #2563eb;
+  --secondary-accent: #7c3aed;
+  --text-main: #0f172a;
+  --text-dim: #475569;
+  --glass: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.05);
+  --nav-blend: rgba(248, 250, 252, 0.8);
+  --gradient-tech: linear-gradient(135deg, #2563eb, #6366f1, #7c3aed);
+  --card-shadow: 0 20px 50px rgba(0, 0, 0, 0.03);
+  --accent-glow: rgba(37, 99, 235, 0.15);
+
+  --font-main: "Plus Jakarta Sans", sans-serif;
+  --font-heading: "Outfit", sans-serif;
+  --transition-smooth: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+[data-theme="dark"] {
+  /* Ultra-Premium Dark Theme */
+  --bg-deep: #050505;
+  --bg-surface: #0f1115;
+  --primary-accent: #00f2ff;
+  --secondary-accent: #7000ff;
+  --text-main: #ffffff;
+  --text-dim: #94a3b8;
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --nav-blend: rgba(15, 17, 21, 0.8);
+  --gradient-tech: linear-gradient(135deg, #00f2ff, #7000ff);
+  --card-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: none; /* Custom cursor implementation pending */
+}
+
+html,
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+  line-height: 1.7;
+  width: 100%;
+  position: relative;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Custom Selection */
+::selection {
+  background: var(--primary-accent);
+  color: #000;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-accent);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Common Header Styles */
+.section-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  background: var(--gradient-tech);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 25px;
+  line-height: 1.1;
+}
+
+/* Glass Buttons */
+.btn {
+  padding: 16px 36px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--gradient-tech);
+  color: #000;
+}
+
+.btn-primary:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 242, 255, 0.25);
+}
+
+.btn-outline {
+  background: var(--glass);
+  color: var(--text-main);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary-accent);
+  color: var(--primary-accent);
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  font-family: "Cairo", sans-serif;
+}
+[dir="rtl"] body {
+  text-align: right;
+  line-height: 1.8;
+}
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] .section-title,
+[dir="rtl"] .logo-text {
+  font-family: "Cairo", sans-serif;
+  letter-spacing: 0;
+}
+
+[dir="rtl"] .mirror-rtl {
+  transform: scaleX(-1);
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
